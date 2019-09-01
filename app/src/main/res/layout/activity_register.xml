@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register_Activity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="25dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="200dp"
+                        android:src="@drawable/logo_white"
+                        android:layout_height="200dp">
+
+                    </ImageView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+
+                    <EditText android:layout_width="match_parent"
+                        android:hint="@string/UserNameLogin"
+                        android:id="@+id/txtUserRegister"
+                        android:inputType="text"
+                        android:layout_height="45dp"/>
+
+                    <EditText android:layout_width="match_parent"
+                        android:hint="@string/txt_email"
+                        android:id="@+id/tv_email_register"
+                        android:layout_marginTop="8dp"
+                        android:inputType="textEmailAddress"
+                        android:layout_height="45dp"/>
+
+                    <EditText android:layout_width="match_parent"
+                        android:id="@+id/tv_password_register"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/PasswordLogin"
+                        android:inputType="textPassword"
+                        android:layout_height="45dp"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/PasswordLogin_repeat"
+                        android:id="@+id/tv_repassword_register"
+                        android:inputType="textPassword"
+                        android:layout_height="45dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="15dp">
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/condition_register"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1">
+                    </CheckBox>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="25dp"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:text="@string/btn_register"
+                        android:id="@+id/btn_register"
+                        android:background="@drawable/button_round_sign_up"
+                        android:textColor="@color/txt_white"
+                        android:layout_height="60dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
