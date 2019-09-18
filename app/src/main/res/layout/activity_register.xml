@@ -41,7 +41,15 @@
                     android:layout_marginTop="15dp"
                     android:orientation="vertical">
 
+                    <androidx.core.widget.ContentLoadingProgressBar
+                        android:layout_width="match_parent"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_height="wrap_content"
+                        android:indeterminate="true"
+                        android:id="@+id/tvProgressBarReg"
+                        android:visibility="gone">
 
+                    </androidx.core.widget.ContentLoadingProgressBar>
                     <EditText android:layout_width="match_parent"
                         android:hint="@string/UserNameLogin"
                         android:id="@+id/txtUserRegister"
@@ -50,13 +58,13 @@
 
                     <EditText android:layout_width="match_parent"
                         android:hint="@string/txt_email"
-                        android:id="@+id/tv_email_register"
+                        android:id="@+id/txtEmailRegister"
                         android:layout_marginTop="8dp"
                         android:inputType="textEmailAddress"
                         android:layout_height="45dp"/>
 
                     <EditText android:layout_width="match_parent"
-                        android:id="@+id/tv_password_register"
+                        android:id="@+id/txtPasswordRegister"
                         android:layout_marginTop="8dp"
                         android:hint="@string/PasswordLogin"
                         android:inputType="textPassword"
@@ -66,7 +74,7 @@
                         android:layout_width="match_parent"
                         android:layout_marginTop="8dp"
                         android:hint="@string/PasswordLogin_repeat"
-                        android:id="@+id/tv_repassword_register"
+                        android:id="@+id/txtRePasswordRegister"
                         android:inputType="textPassword"
                         android:layout_height="45dp"/>
 
@@ -98,6 +106,7 @@
                         android:layout_marginTop="20dp"
                         android:layout_width="match_parent"
                         android:text="@string/btn_register"
+                        android:onClick="onClickPressedRegister"
                         android:id="@+id/btn_register"
                         android:background="@drawable/button_round_sign_up"
                         android:textColor="@color/txt_white"
