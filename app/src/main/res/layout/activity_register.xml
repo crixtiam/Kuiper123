@@ -64,17 +64,17 @@
                         android:layout_height="45dp"/>
 
                     <EditText android:layout_width="match_parent"
-                        android:id="@+id/txtPasswordRegister"
+                        android:id="@+id/txtMobileRegister"
                         android:layout_marginTop="8dp"
-                        android:hint="@string/PasswordLogin"
-                        android:inputType="textPassword"
+                        android:hint="@string/txtMobileReg"
+                        android:inputType="number"
                         android:layout_height="45dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_marginTop="8dp"
-                        android:hint="@string/PasswordLogin_repeat"
-                        android:id="@+id/txtRePasswordRegister"
+                        android:hint="@string/PasswordLogin"
+                        android:id="@+id/txtPasswordRegister"
                         android:inputType="textPassword"
                         android:layout_height="45dp"/>
 
@@ -89,6 +89,7 @@
                     <CheckBox
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/checkboxCarReg"
                         android:text="@string/condition_register"
                         android:textSize="20dp"
                         android:textStyle="bold"
@@ -106,7 +107,6 @@
                         android:layout_marginTop="20dp"
                         android:layout_width="match_parent"
                         android:text="@string/btn_register"
-                        android:onClick="onClickPressedRegister"
                         android:id="@+id/btn_register"
                         android:background="@drawable/button_round_sign_up"
                         android:textColor="@color/txt_white"

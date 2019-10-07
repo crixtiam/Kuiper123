@@ -13,4 +13,23 @@
     <string name="btn_register">Sign up</string>
     <string name="condition_register">I own at least one vehicle</string>
 
+
+    <string name="facebook_app_id">552186395322787</string>
+    <string name="fb_login_protocol_scheme">fb552186395322787</string>
+    <string name="txtMobileReg">Mobile</string>
+    <string name="title_activity_main_view">MainViewActivity</string>
+    <string name="tab_text_1">Vehicles</string>
+    <string name="tab_text_2">Account</string>
+    <string name="btn_Add">Add</string>
+    <string name="driverName">Driver Name</string>
+    <string name="make">Make of Vehicle</string>
+    <string name="year">Year</string>
+    <string name="model">Model</string>
+    <string name="colorVehicle">Color</string>
+    <string name="licencePlate">Licence Plate</string>
+    <string name="driverLicence">Driver Licence</string>
+    <string name="VIN">VIN or Reference Vehicle</string>
+    <string name="TypeVehicle">Type Vehicle (Truck,Sedan,Van,Bus...)</string>
+
+
 </resources>

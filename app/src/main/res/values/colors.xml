@@ -9,4 +9,7 @@
     <color name="Edt_Background_color">#414141</color>
     <color name="txt_white">#FFFFFF</color>
     <color name="btn_sign_up_color">#01BB00</color>
+
+    <color name="btn_add_color">#191919</color>
+
 </resources>

@@ -5,9 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
-import android.widget.EditText
-import android.widget.ProgressBar
-import android.widget.Toast
+import android.widget.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
@@ -16,48 +14,67 @@ import com.google.firebase.database.FirebaseDatabase
 class Register_Activity : AppCompatActivity() {
 
     private lateinit var userNameRegister:EditText
-    private lateinit var passwordRegister1:EditText
-    private lateinit var rePasswordRegister:EditText
+    private lateinit var passwordRegister:EditText
+    private lateinit var mobileRegister:EditText
     private lateinit var emailRegister:EditText
+    private lateinit var checkBoxCarRegister: CheckBox
+    private lateinit var btnRegister:Button
+
     private lateinit var progressBar: ProgressBar
     private lateinit var dbReference:DatabaseReference
     private lateinit var database:FirebaseDatabase
     private lateinit var auth:FirebaseAuth
+
+    private var status : String ="KO"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
         userNameRegister=findViewById(R.id.txtUserRegister)
-        passwordRegister1 = findViewById(R.id.txtPasswordRegister)
-        rePasswordRegister = findViewById(R.id.txtRePasswordRegister)
+        passwordRegister = findViewById(R.id.txtPasswordRegister)
+        mobileRegister = findViewById(R.id.txtMobileRegister)
         emailRegister = findViewById(R.id.txtEmailRegister)
+        checkBoxCarRegister = findViewById(R.id.checkboxCarReg)
+        btnRegister = findViewById(R.id.btn_register)
 
         progressBar= findViewById(R.id.tvProgressBarReg)
+
         database = FirebaseDatabase.getInstance()
         auth = FirebaseAuth.getInstance()
         dbReference = database.reference.child("User")
 
 
+        btnRegister.setOnClickListener{
+            createNewAccount()
+        }
+
+
     }
 
-    fun onClickPressedRegister(view:View){
 
-        createNewAccount()
-    }
 
     private fun createNewAccount(){
 
         val nameUserApp:String = userNameRegister.text.toString()
-        val passwordApp = passwordRegister1.text.toString()
-        val rePasswordApp = rePasswordRegister.text.toString()
+        val passwordApp = passwordRegister.text.toString()
+        val mobileApp = mobileRegister.text.toString()
         val emailApp = emailRegister.text.toString()
-
-        //val myRef = database.getReference("message")
-        //myRef.setValue("Hello, World!")
+        var boolean = false
 
 
-        if (!TextUtils.isEmpty(nameUserApp) && !TextUtils.isEmpty(passwordApp) && !TextUtils.isEmpty(rePasswordApp) && !TextUtils.isEmpty(emailApp) ){
+
+        if (checkBoxCarRegister.isChecked){
+            boolean = true
+            status="OK"
+        }
+        else{
+            boolean =false
+            Toast.makeText(this,"Please Check that you are owner at least one car",Toast.LENGTH_LONG).show()
+        }
+
+
+        if (!TextUtils.isEmpty(nameUserApp) && !TextUtils.isEmpty(passwordApp) && !TextUtils.isEmpty(mobileApp) && !TextUtils.isEmpty(emailApp)&&boolean&&(status=="OK") ){
 
             progressBar.visibility=View.VISIBLE
 
@@ -66,21 +83,23 @@ class Register_Activity : AppCompatActivity() {
                     task ->
                     // verify register OK
                     if (task.isComplete){
-                        //get user  register
+
                         val user:FirebaseUser?=auth.currentUser
                         verifyEmail(user)
 
-                        val database = FirebaseDatabase.getInstance()
-                        val myRef = database.getReference("message")
-                        myRef.setValue("Hello, World!")
+                        val userBD = dbReference.child(user!!.uid)
+                        userBD.child("name").setValue(nameUserApp)
+                        userBD.child("mobile").setValue(mobileApp)
+                        userBD.child("mail").setValue(emailApp)
+                        userBD.child("status").setValue(status)
 
-
-                        //val userBD =dbReference.child(user?.uid!!)
-                        //userBD.child("Username").setValue(nameUserApp)
                         action()
                     }
                 }
 
+        }
+        else{
+            Toast.makeText(this,"Please Fill the Blank Space",Toast.LENGTH_LONG).show()
         }
     }
 
