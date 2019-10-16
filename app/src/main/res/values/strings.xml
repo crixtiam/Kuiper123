@@ -30,6 +30,16 @@
     <string name="driverLicence">Driver Licence</string>
     <string name="VIN">VIN or Reference Vehicle</string>
     <string name="TypeVehicle">Type Vehicle (Truck,Sedan,Van,Bus...)</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="txtvModelVH">Model</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txtvMakeVH">Make</string>
+    <string name="Route">ROUTE</string>
+    <string name="txtvOwner">Owner</string>
+    <string name="txtSelect">Select</string>
+    <string name="txtvDriver">Driver</string>
 
 
 </resources>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewVehicleActivity">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="25dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <EditText
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:hint="@string/model"
+                        android:id="@+id/modelAdd"
+                        android:inputType="text"/>
+
+
+                    <EditText
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="@string/year"
+                        android:id="@+id/yearVehicleAdd"
+                        android:inputType="number"/>
+
+
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+
+
+                    <EditText
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:hint="@string/make"
+                        android:id="@+id/makeVehicleAdd"
+                        android:inputType="text"/>
+                    <EditText
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:hint="@string/colorVehicle"
+                        android:id="@+id/colorVehicleAdd"
+                        android:inputType="text"/>
+
+
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="@string/TypeVehicle"
+                        android:id="@+id/typeVehicleAdd"
+                        android:inputType="text"/>
+
+
+                    <EditText
+                        android:layout_width="300dp"
+                        android:layout_height="45dp"
+                        android:hint="@string/licencePlate"
+                        android:id="@+id/licencePlateVehicleAdd"
+                        android:inputType="text"/>
+
+                    <EditText
+                        android:layout_width="300dp"
+                        android:layout_height="45dp"
+                        android:hint="@string/VIN"
+                        android:id="@+id/vinAdd"
+                        android:inputType="text"/>
+
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <!--<androidx.core.widget.ContentLoadingProgressBar
+                        android:layout_width="match_parent"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_height="wrap_content"
+                        android:indeterminate="true"
+                        android:id="@+id/tvProgressBarReg"
+                        android:visibility="gone">
+
+                    </androidx.core.widget.ContentLoadingProgressBar>-->
+
+                    <EditText android:layout_width="match_parent"
+                        android:hint="@string/driverName"
+                        android:id="@+id/txtDriverNameAdd"
+                        android:inputType="text"
+                        android:layout_height="45dp"/>
+
+                    <EditText android:layout_width="match_parent"
+                        android:hint="@string/driverLicence"
+                        android:id="@+id/txtDriverLicenceAdd"
+                        android:inputType="number"
+                        android:layout_height="45dp"/>
+
+                    <EditText android:layout_width="match_parent"
+                        android:hint="@string/txt_email"
+                        android:id="@+id/txtEmailAdd"
+                        android:layout_marginTop="8dp"
+                        android:inputType="textEmailAddress"
+                        android:layout_height="45dp"/>
+
+                    <EditText android:layout_width="match_parent"
+                        android:id="@+id/txtMobileAdd"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/txtMobileReg"
+                        android:inputType="number"
+                        android:layout_height="45dp"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/PasswordLogin"
+                        android:id="@+id/txtPasswordAdd"
+                        android:inputType="textPassword"
+                        android:layout_height="45dp"/>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_marginTop="25dp"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:text="@string/btn_Add"
+                        android:id="@+id/btn_addNewVehicle"
+                        android:background="@drawable/button_round_add"
+                        android:textColor="@color/txt_white"
+                        android:layout_height="60dp"/>
+
+
+
+
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

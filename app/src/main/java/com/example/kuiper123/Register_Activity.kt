@@ -87,11 +87,11 @@ class Register_Activity : AppCompatActivity() {
                         val user:FirebaseUser?=auth.currentUser
                         verifyEmail(user)
 
-                        val userBD = dbReference.child(user!!.uid)
-                        userBD.child("name").setValue(nameUserApp)
-                        userBD.child("mobile").setValue(mobileApp)
-                        userBD.child("mail").setValue(emailApp)
-                        userBD.child("status").setValue(status)
+                        val userBD = dbReference.child(user!!.uid).child("Personal_data")
+                        userBD.child("Name").setValue(nameUserApp)
+                        userBD.child("Mobile").setValue(mobileApp)
+                        userBD.child("Mail").setValue(emailApp)
+                        userBD.child("Status").setValue(status)
 
                         action()
                     }

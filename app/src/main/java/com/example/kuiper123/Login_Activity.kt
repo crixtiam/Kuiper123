@@ -10,10 +10,8 @@ import android.text.TextUtils
 import android.util.Base64
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
+import com.example.kuiper123.User_Drivers.UserDriverMainActivity
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
@@ -36,9 +34,11 @@ class Login_Activity : AppCompatActivity() {
     private lateinit var btnLogin :Button
     private lateinit var eUsername : EditText
     private lateinit var ePassword : EditText
+   // private lateinit var radioButtonGroup: RadioGroup
+   // private lateinit var radio : RadioButton
  //   private lateinit var callbackManager: CallbackManager
 
-    private lateinit var txtMail:TextView
+ //   private lateinit var txtMail:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,9 +58,25 @@ class Login_Activity : AppCompatActivity() {
         eUsername = findViewById(R.id.UserNameInput)
         ePassword = findViewById(R.id.PasswordInput)
 
+       // radioButtonGroup =findViewById(R.id.radioGroupSel)
+
+
 
         btnLogin.setOnClickListener{
+
             onClickStartApp()
+           // var idRadioGroup = radioButtonGroup.checkedRadioButtonId
+
+           /* if (idRadioGroup != -1) {
+                radio = findViewById(idRadioGroup)
+                Toast.makeText(this, "on click ${radio.text}", Toast.LENGTH_LONG).show()
+               /// onClickStartApp()
+
+               // if(radio.text.toString() == "")
+
+            } else {
+               // onStartAppDriver()
+            }*/
         }
 
     }
@@ -78,6 +94,8 @@ class Login_Activity : AppCompatActivity() {
         if (!TextUtils.isEmpty(password)&&!TextUtils.isEmpty(email)){
             auth.signInWithEmailAndPassword(email,password)
                 .addOnCompleteListener(this){task ->
+
+
                     if (task.isSuccessful){
                         action()
                         finish()
@@ -91,34 +109,65 @@ class Login_Activity : AppCompatActivity() {
         else{
             Toast.makeText(this,"Please Fill the Blank Space",Toast.LENGTH_LONG).show()
         }
-
-
     }
-
-
-
     private fun action(){
-        startActivity(Intent(this,MainViewActivity::class.java))
+        startActivity(Intent(this,MainActivity::class.java))
     }
 
-  /*  fun onClickPressedForgot(view: View){
-        val email = txtMail.text.toString()
-//corregir
-        if (!TextUtils.isEmpty(email)){
-            auth.sendPasswordResetEmail(email)
-                .addOnCompleteListener(this){
-                    task ->
+
+
+
+
+
+
+    /*private fun onStartAppDriver(){
+        val password = ePassword.text.toString()
+        val email = eUsername.text.toString()
+
+        if (!TextUtils.isEmpty(password)&&!TextUtils.isEmpty(email)){
+            auth.signInWithEmailAndPassword(email,password)
+                .addOnCompleteListener(this){task ->
+
+
                     if (task.isSuccessful){
-
+                        action(2)
+                        finish()
                     }
-
-                    else
-                    {
-
+                    else{
+                        Toast.makeText(this,"Authentication Failed",Toast.LENGTH_LONG).show()
                     }
                 }
+
         }
+        else{
+            Toast.makeText(this,"Please Fill the Blank Space",Toast.LENGTH_LONG).show()
+        }
+
+
     }*/
+
+
+
+
+
+    /*  fun onClickPressedForgot(view: View){
+          val email = txtMail.text.toString()
+  //corregir
+          if (!TextUtils.isEmpty(email)){
+              auth.sendPasswordResetEmail(email)
+                  .addOnCompleteListener(this){
+                      task ->
+                      if (task.isSuccessful){
+
+                      }
+
+                      else
+                      {
+
+                      }
+                  }
+          }
+      }*/
 
 
    /* private fun printKeyHash(){
